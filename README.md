@@ -1,5 +1,5 @@
-# rails_base
-Rails base
+# rails_base_updated
+Rails base updated
 
 #### Create Application
 ```bash
