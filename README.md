@@ -1,2 +1,12 @@
 # rails_base_updated
-Projeto base de aplicação rails atualizada
+Rails base atualizado
+
+#### Create Application
+```bash
+$ docker-compose run web rails new . --force --no-deps --database=postgresql
+```
+
+#### Create Application in API Mode
+```bash
+$ docker-compose run web rails new . --api --force --no-deps --database=postgresql
+```
