@@ -1,24 +1,13 @@
-# README
+# rails_base
+Rails base
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Create Application
+```bash
+$ docker-compose run web rails new . --force --no-deps --database=postgresql
+```
 
-Things you may want to cover:
+#### Create Application in API Mode
+```bash
+$ docker-compose run web rails new . --api --force --no-deps --database=postgresql
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
