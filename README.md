@@ -1,33 +1,31 @@
-# rails_base_updated
-Rails base updated
+# Projeto Rails Base Atualizado
+Esse é um repositório para startar projetos rails atualizados e com um padrão básico.
+Por enquanto temos configurado no Github Actions o Workflow do Ruby e controles de qualidade de código com o Rubocop.
 
-![Ruby](https://github.com/kaioramos/rails_base_updated/workflows/Ruby/badge.svg)
+![Ruby](https://github.com/kaioramos/rails_base_updated/workflows/Ruby/badge.svg) ![Rubocop](https://github.com/k41n3w/rails_base_updated/workflows/Rubocop/badge.svg)
 
-#### Create Application
-```bash
-$ docker-compose run web rails new . --force --no-deps --database=postgresql
-```
 
-#### Create Application in API Mode
-```bash
-$ docker-compose run web rails new . --api --force --no-deps --database=postgresql
-```
 
-#### After creation
-Build the project
+### Depois de baixar o projeto
+Para construir o projeto locamente:
 
 ```bash
 $ docker-compose build .
 ```
 
-Up the application
+Para subir a aplicação criada com o comando anterior:
 ```bash
 $ docker-compose up --build
 ```
 
-Setup BD, inside de container run
+Para configurar o banco, dentro do container rode:
 ```bash
 $ rails db:create db:migrate
 ```
 
-If is everthing fine you'll see the configuration Ruby on Rails page on http://0.0.0.0/
+Para rodar o Rubocop localmente, dentro do container rode:
+```bash
+$ rubocop
+```
+
+Se tudo estiver correto, como acho que deve estar, ao subir o projeto você conseguerá ver a página de configuração do rails no endereço: http://0.0.0.0/
