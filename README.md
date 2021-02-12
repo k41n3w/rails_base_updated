@@ -1,7 +1,7 @@
 # rails_base_updated
 Rails base updated
 
-![Ruby](https://github.com/kaioramos/rails_base_updated/workflows/Ruby/badge.svg)
+![Ruby](https://github.com/kaioramos/rails_base_updated/workflows/Ruby/badge.svg) ![Rubocop](https://github.com/k41n3w/rails_base_updated/workflows/Rubocop/badge.svg)
 
 #### Create Application
 ```bash
