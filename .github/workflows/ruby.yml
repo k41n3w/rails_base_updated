@@ -44,4 +44,4 @@ jobs:
         RAILS_ENV: test
         
     - name: Run tests
-      run: bundle exec rake
+      run: bundle exec rspec
