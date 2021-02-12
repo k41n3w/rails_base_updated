@@ -4,7 +4,7 @@
 Esse é um repositório para startar projetos rails atualizados e com um padrão básico.
 
 Por enquanto temos configurado:
-- Github Actions o Workflow do Ruby;
+- Github Actions Workflow do Ruby para rodar testes a partir da gem Rspec;
 - Github Actions para controle de qualidade de código com a gem Rubocop;
 - Github Actions para controle de vunerabilidades com o a gem Brakeman.
 
