@@ -24,6 +24,10 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: '3.0'
+        
+    # Setup dependencies
+    - name: Scan
+      run: bundle install
 
     # Execute Brakeman CLI 
     - name: Scan
