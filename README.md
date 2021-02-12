@@ -31,4 +31,14 @@ Para rodar o Rubocop localmente, dentro do container rode:
 $ rubocop
 ```
 
+Para rodar o Brakeman localmente, dentro do container rode:
+```bash
+$ brakeman
+```
+
+Para rodar o Rspec localmente, dentro do container rode:
+```bash
+$ rspec
+```
+
 Se tudo estiver correto, como acho que deve estar, ao subir o projeto você conseguerá ver a página de configuração do rails no endereço: http://0.0.0.0/
