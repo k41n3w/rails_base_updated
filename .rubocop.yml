@@ -1,0 +1,18 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/**/*"
+    - "vendor/**/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "script/**/*"
+
+Style/AsciiComments:
+  Enabled: true
+Style/Documentation:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: true
+Lint/UselessAssignment:
+  Enabled: true
