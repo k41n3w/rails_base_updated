@@ -19,6 +19,9 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0
+        
+    - name: Bundle update
+      run: bundle update
 
     # This step is not necessary if you add the gem to your Gemfile
     - name: Install Code Scanning integration
