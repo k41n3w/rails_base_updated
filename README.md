@@ -1,8 +1,12 @@
 # Projeto Rails Base Atualizado
 Esse é um repositório para startar projetos rails atualizados e com um padrão básico.
-Por enquanto temos configurado no Github Actions o Workflow do Ruby e controles de qualidade de código com o Rubocop.
 
-![Ruby](https://github.com/kaioramos/rails_base_updated/workflows/Ruby/badge.svg) ![Rubocop](https://github.com/k41n3w/rails_base_updated/workflows/Rubocop/badge.svg)
+Por enquanto temos configurado:
+- Github Actions o Workflow do Ruby;
+- Github Actions para controle de qualidade de código com a gem Rubocop;
+- Github Actions para controle de vunerabilidades com o a gem Brakeman.
+
+![Ruby](https://github.com/kaioramos/rails_base_updated/workflows/Ruby/badge.svg) ![Rubocop](https://github.com/k41n3w/rails_base_updated/workflows/Rubocop/badge.svg) ![Brakeman Scan](https://github.com/k41n3w/rails_base_updated/workflows/Brakeman%20Scan/badge.svg)
 
 
 
