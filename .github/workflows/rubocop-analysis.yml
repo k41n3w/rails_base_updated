@@ -24,13 +24,4 @@ jobs:
       run: bundle install
 
     - name: Rubocop run
-      run: |
-        bash -c "
-          bundle exec rubocop --require code_scanning --format CodeScanning::SarifFormatter -o rubocop.sarif
-          [[ $? -ne 2 ]]
-        "
-
-    - name: Upload Sarif output
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: rubocop.sarif
+      run: bundle exec rubocop
