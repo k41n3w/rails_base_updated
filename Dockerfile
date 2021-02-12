@@ -30,3 +30,5 @@ COPY package.json /opt/app/package.json
 
 RUN bundle install --verbose --jobs 20 --retry 5
 RUN yarn install
+
+COPY . .
