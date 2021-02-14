@@ -1,0 +1,15 @@
+---
+openapi: 3.0.0
+info:
+  title: API V1
+  version: v1
+paths:
+  "/content/show":
+    get:
+      summary: Retorna as informações do sistema
+      tags:
+      - Content
+      description: Modelo de documentação para APIs contendo as informações da rota
+      responses:
+        '200':
+          description: blog created

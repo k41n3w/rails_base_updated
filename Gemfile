@@ -13,6 +13,8 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.1'
 # Gem for logs
 gem 'rollbar'
+# gem to document API's
+gem 'rswag'
 # Gem for tests
 gem 'rubocop', require: false
 
