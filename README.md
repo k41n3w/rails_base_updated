@@ -3,7 +3,7 @@
 
 Esse é um repositório para startar projetos rails atualizados e com um padrão básico.
 
-[Link da aplicação no Heroku](https://rails-base-updated.herokuapp.com/)
+--> [Link da aplicação no Heroku](https://rails-base-updated.herokuapp.com/) <--
 
 Por enquanto temos configurado:
 - Github Actions Workflow do Ruby para rodar testes a partir da gem Rspec;
