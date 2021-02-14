@@ -5,11 +5,12 @@ Esse é um repositório para startar projetos rails atualizados e com um padrão
 
 --> [Link da aplicação no Heroku](https://rails-base-updated.herokuapp.com/) <--
 
-Por enquanto temos configurado:
+Configurações:
 - Github Actions Workflow do Ruby para rodar testes a partir da gem Rspec;
 - Github Actions para controle de guia de estilos do Ruby com a gem Rubocop;
 - Github Actions para controle de vunerabilidades com o a gem Brakeman.
-- Github Actions para controle segurança com o Codacy Security.
+- Github Actions para controle segurança com o Codacy Security;
+- Controle de exceções com a gem Rollbar.
 
 ### Depois de baixar o projeto
 Para construir o projeto locamente:
