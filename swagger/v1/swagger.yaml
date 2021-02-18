@@ -12,7 +12,7 @@ paths:
       description: Modelo de documentação para APIs contendo as informações da rota
       responses:
         '200':
-          description: blog created
+          description: Data returned
   "/user/login":
     post:
       summary: Efetua login e gera chave criptografada
@@ -22,7 +22,7 @@ paths:
       parameters: []
       responses:
         '200':
-          description: Login efetuado Com Sucesso!
+          description: Login Efetuado Com Sucesso!
       requestBody:
         content:
           application/json:
@@ -39,5 +39,37 @@ paths:
                       type: string
                       example: qwe123
               required:
+              - email
+              - password
+  "/user/create":
+    post:
+      summary: Cria usuário
+      tags:
+      - User
+      description: Endpoint para criar usuário
+      parameters: []
+      responses:
+        '200':
+          description: Usuário Criado Com Sucesso!
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Caio Ramos
+                    email:
+                      type: string
+                      example: kaineo@hotmail.com
+                    password:
+                      type: string
+                      example: qwe123
+              required:
+              - name
               - email
               - password

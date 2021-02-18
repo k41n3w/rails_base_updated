@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class UserController < ApplicationController
+  def create
+    user = User.new(user_params)
+    user.save!
+    render json: { user: user }, status: :created
+  end
+
   def login
     @email = login_params[:email]
     password = login_params[:password]
@@ -17,6 +23,10 @@ class UserController < ApplicationController
 
   def login_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
   end
 
   def user

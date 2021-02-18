@@ -23,9 +23,37 @@ describe 'User' do
       }
       produces 'application/json'
 
-      response '200', 'Login efetuado Com Sucesso!' do
+      response '200', 'Login Efetuado Com Sucesso!' do
         let!(:user) { create(:user) }
         let(:params) { { user: { email: 'kaineo@hotmail.com', password: 'qwe123' } } }
+        run_test!
+      end
+    end
+  end
+
+  path '/user/create' do
+    post 'Cria usuário' do
+      tags 'User'
+      description 'Endpoint para criar usuário'
+      consumes 'application/json'
+      parameter name: :params, in: :body, schema: {
+        type: :object,
+        properties: {
+          user: {
+            type: :object,
+            properties: {
+              name: { type: :string, example: 'Caio Ramos' },
+              email: { type: :string, example: 'kaineo@hotmail.com' },
+              password: { type: :string, example: 'qwe123' }
+            }
+          }
+        },
+        required: %w[name email password]
+      }
+      produces 'application/json'
+
+      response '201', 'Usuário Criado Com Sucesso!' do
+        let(:params) { { user: { name: 'Caio Ramos', email: 'kaineo@hotmail.com', password: 'qwe123' } } }
         run_test!
       end
     end

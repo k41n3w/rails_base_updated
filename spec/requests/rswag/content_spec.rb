@@ -9,7 +9,7 @@ describe 'Content' do
       description 'Modelo de documentação para APIs contendo as informações da rota'
       consumes 'application/json'
 
-      response '200', 'blog created' do
+      response '200', 'Data returned' do
         run_test! do |response|
           data = JSON.parse(response.body)
           expect(data['developed_by']).to eq('k41n3w')
