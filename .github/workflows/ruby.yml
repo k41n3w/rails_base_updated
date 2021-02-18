@@ -43,5 +43,8 @@ jobs:
       env:
         RAILS_ENV: test
         
-    - name: Run tests
+    - name: Run Tests
+      env:
+        RAILS_ENV: test
+        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
       run: bundle exec rspec
