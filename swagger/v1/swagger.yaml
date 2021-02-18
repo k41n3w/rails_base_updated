@@ -13,3 +13,31 @@ paths:
       responses:
         '200':
           description: blog created
+  "/user/login":
+    post:
+      summary: Efetua login e gera chave criptografada
+      tags:
+      - User
+      description: Endpoint para gerar chave criptografada de login
+      parameters: []
+      responses:
+        '200':
+          description: Login efetuado Com Sucesso!
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      example: kaineo@hotmail.com
+                    password:
+                      type: string
+                      example: qwe123
+              required:
+              - email
+              - password

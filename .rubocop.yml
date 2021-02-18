@@ -16,3 +16,6 @@ Lint/AssignmentInCondition:
   Enabled: true
 Lint/UselessAssignment:
   Enabled: true
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
