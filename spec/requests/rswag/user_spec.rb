@@ -24,7 +24,7 @@ describe 'User' do
       produces 'application/json'
 
       response '200', 'Login efetuado Com Sucesso!' do
-        let(:user) { create(:user) }
+        let!(:user) { create(:user) }
         let(:params) { { user: { email: 'kaineo@hotmail.com', password: 'qwe123' } } }
         run_test!
       end
