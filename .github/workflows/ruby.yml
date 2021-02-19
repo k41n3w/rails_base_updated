@@ -41,10 +41,12 @@ jobs:
     - name: Config Test Enviroment
       run: bin/rails db:drop db:create db:migrate
       env:
+        DB_HOST: localhost
         RAILS_ENV: test
         
     - name: Run Tests
       env:
+        DB_HOST: localhost
         RAILS_ENV: test
         RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
       run: bundle exec rspec

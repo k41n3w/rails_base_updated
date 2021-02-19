@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ContentController < ApplicationController
+  skip_before_action :authorize!
+
   def show
     render json: {
       rails_env: Rails.env,

@@ -21,7 +21,17 @@ RSpec.configure do |config|
         title: 'API V1',
         version: 'v1'
       },
-      paths: {}
+      paths: {},
+      components: {
+        securitySchemes: {
+          Bearer: {
+            description: 'Chave JWT requerida',
+            type: :apiKey,
+            name: 'Authorization',
+            in: :header
+          }
+        }
+      }
     }
   }
 

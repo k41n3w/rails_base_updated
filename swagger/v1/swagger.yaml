@@ -49,6 +49,40 @@ paths:
       description: Endpoint para criar usuário
       parameters: []
       responses:
+        '201':
+          description: Usuário Criado Com Sucesso!
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Caio Ramos
+                    email:
+                      type: string
+                      example: kaineo@hotmail.com
+                    password:
+                      type: string
+                      example: qwe123
+              required:
+              - name
+              - email
+              - password
+  "/user/update":
+    patch:
+      summary: Atualiza usuário a partir do token gerado no login
+      tags:
+      - User
+      security:
+      - Bearer: {}
+      description: Endpoint para alterar usuário
+      parameters: []
+      responses:
         '200':
           description: Usuário Criado Com Sucesso!
       requestBody:
@@ -73,3 +107,21 @@ paths:
               - name
               - email
               - password
+  "/user/show":
+    get:
+      summary: Exibe usuário a partir do token gerado no login
+      tags:
+      - User
+      security:
+      - Bearer: {}
+      description: Endpoint para mostrar dados do usuário logado
+      responses:
+        '200':
+          description: Informações de Usuário Exibidas Com Sucesso!
+components:
+  securitySchemes:
+    Bearer:
+      description: Chave JWT requerida
+      type: apiKey
+      name: Authorization
+      in: header

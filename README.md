@@ -2,6 +2,7 @@
 ![Ruby](https://github.com/kaioramos/rails_base_updated/workflows/Ruby/badge.svg) ![Rubocop](https://github.com/k41n3w/rails_base_updated/workflows/Rubocop/badge.svg) ![Brakeman Scan](https://github.com/k41n3w/rails_base_updated/workflows/Brakeman%20Scan/badge.svg) ![Codacy Security Scan](https://github.com/k41n3w/rails_base_updated/workflows/Codacy%20Security%20Scan/badge.svg)
 
 Esse é um repositório para startar projetos rails atualizados e com um padrão básico.
+Possui uma model de User com exemplos dos verbos http e login baseado em chave jwt.
 
 --> [Link da aplicação no Heroku](https://rails-base-updated.herokuapp.com/) <--
 

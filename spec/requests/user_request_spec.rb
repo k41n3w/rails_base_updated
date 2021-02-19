@@ -52,4 +52,43 @@ RSpec.describe 'Users', type: :request do
       expect(json[:message]).to include('param is missing or the value is empty')
     end
   end
+
+  describe 'Patch /update', type: :request do
+    before do
+      @user = create(:user)
+      post sign_in_path, params: { user: { email: @user.email, password: @user.password } }
+      json = JSON.parse(response.body, symbolize_names: true)
+      @token = json[:session]
+    end
+
+    it 'should update user with correct token' do
+      patch user_update_path, params: { user: { name: 'Nome Novo', email: 'email@novo.com.br', password: 'qwenovo' } },
+                              headers: { Authorization: @token }
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to have_http_status(:ok)
+      expect(json[:message]).to eq('User: Nome Novo updated!')
+      expect(@user.reload.name).to eq('Nome Novo')
+      expect(@user.reload.email).to eq('email@novo.com.br')
+    end
+  end
+
+  describe 'Get /show', type: :request do
+    before do
+      @user = create(:user)
+      post sign_in_path, params: { user: { email: @user.email, password: @user.password } }
+      json = JSON.parse(response.body, symbolize_names: true)
+      @token = json[:session]
+    end
+
+    it 'should show user with correct token' do
+      get user_path, headers: { Authorization: @token }
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to have_http_status(:ok)
+      expect(json[:user]).not_to be_nil
+    end
+  end
 end

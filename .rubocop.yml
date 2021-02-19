@@ -5,17 +5,15 @@ AllCops:
     - "vendor/**/*"
     - "db/**/*"
     - "config/**/*"
-    - "script/**/*"
 
 Style/AsciiComments:
   Enabled: true
 Style/Documentation:
   Enabled: false
 
-Lint/AssignmentInCondition:
-  Enabled: true
-Lint/UselessAssignment:
-  Enabled: true
-
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+  Exclude:
+    - 'spec/**/*.rb'
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
