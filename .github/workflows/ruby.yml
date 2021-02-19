@@ -36,7 +36,7 @@ jobs:
       run: |
         sudo apt-get install postgresql libpq-dev
         sudo service postgresql start
-        sudo -u postgres createuser --superuser pguser
+        sudo -u postgres createuser --superuser "$USER"
         
     - name: Config Test Enviroment
       run: bin/rails db:drop db:create db:migrate
