@@ -1,52 +1,58 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
-
-name: Ruby
+name: Rails Tests
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
 
 jobs:
   test:
-
+    name: Rspec Test Action
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version: ['3.0']
+
+    services:
+      postgres:
+        image: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_USER: pguser
+          POSTGRES_PASSWORD: postgres
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
-    # uses: ruby/setup-ruby@v1
-      uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Ruby version specified in `.ruby-version`
+      uses: eregon/use-ruby-action@master
+
+    - name: Gem cache
+      uses: actions/cache@v1
       with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-        
-    - name: Set up PostgreSQL
-      run: |
-        sudo apt-get install postgresql libpq-dev
-        sudo service postgresql start
-        sudo -u postgres createuser --superuser "$USER"
-        
-    - name: Config Test Enviroment
-      run: bin/rails db:drop db:create db:migrate
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    - name: Build App
       env:
         DB_HOST: localhost
         RAILS_ENV: test
-        
+      run: |
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+        bin/rails db:create db:migrate
+
     - name: Run Tests
       env:
-        DB_HOST: localhost
         RAILS_ENV: test
-        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+        DB_HOST: localhost
       run: bundle exec rspec
