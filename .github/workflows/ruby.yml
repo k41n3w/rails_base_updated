@@ -6,7 +6,7 @@ on:
       - 'main'
   push:
     branches:
-      - 'teste-ci'
+      - 'main'
 
 jobs:
   test:
