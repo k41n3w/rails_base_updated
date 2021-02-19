@@ -13,6 +13,7 @@ jobs:
     name: Rspec Test Action
     runs-on: ubuntu-latest
 
+    # Esse serviço faz o download do banco e seta as variáveis de usuário e senha
     services:
       postgres:
         image: postgres
@@ -23,7 +24,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         env:
-          POSTGRES_HOST_AUTH_METHOD: trust
           POSTGRES_USER: pguser
           POSTGRES_PASSWORD: postgres
 
@@ -34,6 +34,7 @@ jobs:
     - name: Install Ruby version specified in `.ruby-version`
       uses: eregon/use-ruby-action@master
 
+    # Faz um cache da suas gems pra não ficar precisando instalar tudo de novo sempre que roda o pipeline
     - name: Gem cache
       uses: actions/cache@v1
       with:
