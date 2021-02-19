@@ -55,4 +55,5 @@ jobs:
       env:
         RAILS_ENV: test
         DB_HOST: localhost
+        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
       run: bundle exec rspec
