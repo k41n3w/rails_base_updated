@@ -13,8 +13,7 @@ Configurações:
 - Github Actions para controle de guia de estilos do Ruby com a **gem Rubocop**;
 - Github Actions para controle de vunerabilidades com o a **gem Brakeman**.
 - Github Actions para controle segurança com o **Codacy Security**;
-- Controle de exceções com a **gem New Relic**;
-- Controle de exceções com a **gem Sentry**;
+- Controle de Logs com as  **gems New Relic e Sentry**;
 - Documentação com a **gem Rswag**.
 
 ### Depois de baixar o projeto
