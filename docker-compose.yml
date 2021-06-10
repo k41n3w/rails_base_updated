@@ -27,4 +27,5 @@ services:
       TIME_ZONE: 'Brasilia'
       ROLLBAR_ENV: '478590031f6c4db5bc9aa41840aa23bf'
       NEW_RELIC_KEY: 'f17fe4fa24bd06c7a9dfbb30e0e1aacc6ab8NRAL'
+      SENTRY_KEY: 'https://4d98900c84524bd9884fa8d4677af770@o824769.ingest.sentry.io/5810939'
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"

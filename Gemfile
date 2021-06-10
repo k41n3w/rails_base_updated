@@ -25,6 +25,8 @@ gem 'rollbar'
 gem 'rswag'
 # Gem for tests
 gem 'rubocop', require: false
+# Gem logs
+gem "sentry-ruby"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
