@@ -19,8 +19,6 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
-# Gem for logs
-gem 'rollbar'
 # gem to document API's
 gem 'rswag'
 # Gem for tests
