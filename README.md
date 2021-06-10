@@ -1,5 +1,5 @@
 # Projeto Rails Base Atualizado
-[![Rails Tests](https://github.com/k41n3w/rails_base_updated/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/k41n3w/rails_base_updated/actions/workflows/ruby.yml) ![Rubocop](https://github.com/k41n3w/rails_base_updated/workflows/Rubocop/badge.svg) ![Brakeman Scan](https://github.com/k41n3w/rails_base_updated/workflows/Brakeman%20Scan/badge.svg) ![Codacy Security Scan](https://github.com/k41n3w/rails_base_updated/workflows/Codacy%20Security%20Scan/badge.svg)
+[![Rails Tests](https://github.com/k41n3w/rails_base_updated/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/k41n3w/rails_base_updated/actions/workflows/ruby.yml) ![Codacy Security Scan](https://github.com/k41n3w/rails_base_updated/workflows/Codacy%20Security%20Scan/badge.svg)
 
 Esse é um repositório para startar projetos rails atualizados e com um padrão básico.
 Possui uma model de User com exemplos dos verbos http e login baseado em chave jwt.
@@ -13,7 +13,8 @@ Configurações:
 - Github Actions para controle de guia de estilos do Ruby com a **gem Rubocop**;
 - Github Actions para controle de vunerabilidades com o a **gem Brakeman**.
 - Github Actions para controle segurança com o **Codacy Security**;
-- Controle de exceções com a **gem Rollbar**;
+- Controle de exceções com a **gem New Relic**;
+- Controle de exceções com a **gem Sentry**;
 - Documentação com a **gem Rswag**.
 
 ### Depois de baixar o projeto
