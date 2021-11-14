@@ -2,6 +2,7 @@
 [![Rails Tests](https://github.com/k41n3w/rails_base_updated/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/k41n3w/rails_base_updated/actions/workflows/ruby.yml) ![Codacy Security Scan](https://github.com/k41n3w/rails_base_updated/workflows/Codacy%20Security%20Scan/badge.svg)
 
 Esse é um repositório para startar projetos rails atualizados e com um padrão básico.
+É usado também como laboratorio para novas implementações e testes.
 Possui uma model de User com exemplos dos verbos http e login baseado em chave jwt.
 
 --> [Link da aplicação no Heroku](https://rails-base-updated.herokuapp.com/) <--
@@ -15,6 +16,8 @@ Configurações:
 - Github Actions para controle segurança com o **Codacy Security**;
 - Controle de Logs com as  **gems New Relic e Sentry**;
 - Documentação com a **gem Rswag**.
+
+Fique a vontade para copiar o quiser, espero que aproveite!
 
 ### Depois de baixar o projeto
 Para construir o projeto locamente:
