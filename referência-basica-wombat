@@ -1,0 +1,52 @@
+
+# Web scraper with an elegant DSL that parses structured data from web pages.
+gem 'wombat'
+
+channel = Channel.create(name: "Discovery Channel", description: "Canal inicial", group: "variedades", tag: "DIS")
+
+
+require 'wombat'
+
+tag = "DIS"
+
+crawl = Wombat.crawl do
+  base_url "https://meuguia.tv/programacao/canal/#{tag}"
+  path "/"
+  canal "css=h1"
+
+  programas "css=li", :iterator do
+    name "css=h2"
+    group "css=h3"
+    start_at css: ".lileft"
+    channel_id "1"
+  end
+
+end
+
+
+Program.create(crawl["programas"])
+
+Program.create(crawl["programas"])
+
+
+
+Canal
+-
+Nome:
+Descrição:
+Grupo:
+Tag:
+Image:
+
+Programa
+-
+Nome:
+Tipo:
+Data de inicio:
+Data de termino:
+
+rails generate model channel name:string description:string group:string tag:string image:string
+
+rails generate model program name:string type:string start_at:date ends_at:date
+
+channel = Channel.create(name: "Discovery Channel", description: "Canal inicial", group: "variedades", tag: "DIS")

@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_202043) do
+ActiveRecord::Schema.define(version: 2021_11_17_195521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "group"
+    t.string "tag"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string "name"
+    t.string "group"
+    t.string "start_at"
+    t.string "ends_at"
+    t.bigint "channel_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel_id"], name: "index_programs_on_channel_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -23,4 +44,5 @@ ActiveRecord::Schema.define(version: 2021_02_17_202043) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "programs", "channels"
 end

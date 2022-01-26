@@ -47,6 +47,8 @@ gem 'sentry-ruby'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+gem 'wombat'
+
 group :production, :development, :test do
   gem 'rspec-rails', '~> 4.0.2'
 end
