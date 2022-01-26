@@ -10,7 +10,7 @@ RSpec.describe 'Contents', type: :request do
 
       expect(response).to have_http_status(:success)
       expect(json['ruby_version']).to eq('3.0.0')
-      expect(json['rails_version']).to eq('6.1.1')
+      expect(json['rails_version']).to eq('6.1.4')
       expect(json['credentials_key']).to eq(Rails.application.credentials[Rails.env.to_sym][:SOME_KEY])
       expect(json['developed_by']).to eq('k41n3w')
     end
