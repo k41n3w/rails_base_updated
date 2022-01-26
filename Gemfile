@@ -24,7 +24,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.1'
+gem 'rails', '~> 6.1'
 
 # gem to document API's
 gem 'rswag'
@@ -47,6 +47,7 @@ gem 'sentry-ruby'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# For webscraping
 gem 'wombat'
 
 group :production, :development, :test do
